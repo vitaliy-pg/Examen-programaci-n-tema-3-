@@ -37,7 +37,7 @@ Ejercicio 6: Diseño y añado al menos dos funciones adicionales
 
 Ejercicio 7: Añado ejemplos como buen diseñador (mentira no me se la de trabajar)
 
-Ejercicio 8:
+Ejercicio 8: Posibles mejoras o extensiones que podrían beneficiar al sistema
 
 
 
