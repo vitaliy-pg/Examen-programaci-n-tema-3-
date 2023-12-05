@@ -121,6 +121,14 @@ int main(){
 
         env.insert("player_health", Variant(80));
 
+        if (env.exists("player_health")) {
+            Variant health;
+            env.lookup("player_health", health);
+            std::cout << "La salud del jugador es: " << health.getIntValue() << "\n";
+        } else {
+            std::cout << "El símbolo 'player_health' no existe en el entorno.\n";
+        }
+
 
     return 0;
 
