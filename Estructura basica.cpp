@@ -119,6 +119,7 @@ int main(){
         std::cout << "Estado inicial del entorno:\n";
         env.printEnvironment();
 
+        env.insert("player_health", Variant(80));
 
 
     return 0;
