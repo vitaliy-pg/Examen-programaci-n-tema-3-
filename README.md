@@ -31,7 +31,7 @@ Ejercicio 3: Implemento y prueba el método lookup
 
 Ejercicio 4: Introduzco mecanismos de manejo de excepciones 
 
-Ejercicio 5:
+Ejercicio 5: Explicar cómo la clase Environment trabaja en conjunto con Variant
 
 Ejercicio 6:
 
