@@ -17,8 +17,15 @@ private:
         int intValue;
         float floatValue;
         std::string stringValue;
+    };
+public:
+    Variant() : dataType(Type::Integer), intValue(0) {}
+    Variant(int value) : dataType(Type::Integer), intValue(value) {}
+    Variant(float value) : dataType(Type::Float), floatValue(value) {}
+    Variant(const std::string& value) : dataType(Type::String), stringValue(value) {}
 
-Class Environment
+
+    Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
 {
     private :
