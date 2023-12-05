@@ -35,6 +35,13 @@ Class Environment
     }
     bool lookup(const std::string& name, Variant& result) const {
         auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            result = it->second;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 
