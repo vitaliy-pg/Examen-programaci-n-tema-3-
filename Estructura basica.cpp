@@ -24,6 +24,10 @@ public:
     Variant(float value) : dataType(Type::Float), floatValue(value) {}
     Variant(const std::string& value) : dataType(Type::String), stringValue(value) {}
 
+    Type getType() const {
+        return dataType;
+    }
+
 
     Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
