@@ -1,13 +1,13 @@
 #include <map>
 #include <string>
-#include "Variant.h"#include <map>
+#include "Variant.h"
 
 Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
 {
     private :
         std::map<std::string, Variant> symbolTable;
-public :
+    public :
     Environment() {
 
 }
