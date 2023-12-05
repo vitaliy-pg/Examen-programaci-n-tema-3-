@@ -3,7 +3,7 @@
 #include <stdexcept>    //para el manejo de excepciones
 #include <iostream>
 class Variant {
-    // Implementación de la clase Variant
+
 };
 
 Class Environment
