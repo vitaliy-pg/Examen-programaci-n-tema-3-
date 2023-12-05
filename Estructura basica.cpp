@@ -2,6 +2,7 @@
 #include <string>
 #include <stdexcept>    //para el manejo de excepciones
 #include <iostream>
+#include <variant>
 class Variant {
 public:
     enum class Type {
