@@ -33,8 +33,20 @@ Class Environment
         auto result = symbolTable.insert({name, value});
         return result.second;
     }
+
+
     void executeScript(const std::string& script) {
         // Implementación de la ejecución del script, por ejemplo, interpretación de comandos
 }
+
+};
+
+int main(){
+
+
+
+
+
+
 
 }
