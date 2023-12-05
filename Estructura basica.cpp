@@ -59,6 +59,12 @@ int main(){
         // Insertar símbolos en el entorno
         env.insert("x", Variant(10));
         std::cout << "Símbolo 'x' insertado con éxito.\n";
+        env.insert("x", Variant(20));
+        std::cout << "Símbolo 'x' insertado con éxito.\n";  // Este mensaje no se imprimirá debido a la excepción
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error al insertar símbolo: " << e.what() << std::endl;
+    }
 
 
     Variant result;
