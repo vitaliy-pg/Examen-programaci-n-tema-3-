@@ -70,28 +70,15 @@ public:
     private :
         std::map<std::string, Variant> symbolTable;
     public :
-    Environment() {
+    Environment() {}
 
-}
-
-    void setVariable(const std::string& name, const Variant& value) {
-        symbolTable[name] = value;
-    }
-
-
-    Variant getVariable(const std::string& name, const Variant& defaultValue = Variant()) const {
-        auto it = symbolTable.find(name);
-        if (it != symbolTable.end()) {
-            return it->second;
-        } else {
-            return defaultValue;
+    void insert(const std::string& name, const Variant& value) {
+        auto result = symbolTable.insert({name, value});
+        if (!result.second) {
+            throw std::runtime_error("El símbolo '" + name + "' ya existe en el entorno.");
         }
     }
 
-    bool insert(const std::string& name, const Variant& value) {
-        auto result = symbolTable.insert({name, value});
-        return result.second;
-    }
     bool lookup(const std::string& name, Variant& result) const {
         auto it = symbolTable.find(name);
         if (it != symbolTable.end()) {
@@ -102,30 +89,43 @@ public:
         }
     }
 
+    void remove(const std::string& name) {
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            symbolTable.erase(it);
+        } else {
+            throw std::runtime_error("El símbolo '" + name + "' no existe en el entorno y no se puede eliminar.");
+        }
+    }
 
+    bool exists(const std::string& name) const {
+        return symbolTable.find(name) != symbolTable.end();
+    }
 
-    void executeScript(const std::string& script) {
-        // Implementación de la ejecución del script, por ejemplo, interpretación de comandos
-}
-
+    void printEnvironment() const {
+        for (const auto& entry : symbolTable) {
+            std::cout << entry.first << ": " << entry.second.toString() << std::endl;
+        }
+    }
 };
 
 int main(){
+    try {
     Environment env;
 
-    try {
+
         // Insertar símbolos en el entorno
         env.insert("x", Variant(10));
         std::cout << "Símbolo 'x' insertado con éxito.\n";
         env.insert("x", Variant(20));
         std::cout << "Símbolo 'x' insertado con éxito.\n";  // Este mensaje no se imprimirá debido a la excepción
 
-    } catch (const std::exception& e) {
+     catch (const std::exception& e) {
         std::cerr << "Error al insertar símbolo: " << e.what() << std::endl;
     }
 
 
-    try {
+
         // Buscar símbolos en el entorno
         Variant result;
         if (env.lookup("x", result)) {
