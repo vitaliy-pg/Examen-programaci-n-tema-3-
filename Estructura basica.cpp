@@ -55,11 +55,12 @@ Class Environment
 int main(){
     Environment env;
 
-    if (env.insert("x", Variant(10))) {
+    try {
+        // Insertar símbolos en el entorno
+        env.insert("x", Variant(10));
         std::cout << "Símbolo 'x' insertado con éxito.\n";
-    } else {
-        std::cout << "El símbolo 'x' ya existe en el entorno.\n";
-    }
+
+
     Variant result;
     if (env.lookup("x", result)) {
         std::cout << "Símbolo 'x' encontrado. Valor: " << result.getIntValue() << std::endl;
