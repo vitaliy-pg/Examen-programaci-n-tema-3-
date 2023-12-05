@@ -131,8 +131,12 @@ int main(){
 
         env.remove("player_position");
 
+        std::cout << "\nEstado final del entorno:\n";
+        env.printEnvironment();
 
-    return 0;
+
+
+        return 0;
 
 
 }
