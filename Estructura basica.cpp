@@ -64,7 +64,7 @@ public:
 };
 
 
-    Class Environment
+     Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
 {
     private :
@@ -113,44 +113,7 @@ int main(){
     try {
         Environment env;
 
-        // Insertar símbolos en el entorno
-        env.insert("x", Variant(10));
-        std::cout << "Símbolo 'x' insertado con éxito.\n";
 
-        env.insert("y", Variant(20.5));
-        std::cout << "Símbolo 'y' insertado con éxito.\n";
-
-        // Verificar si un símbolo existe
-        if (env.exists("x")) {
-            std::cout << "El símbolo 'x' existe en el entorno.\n";
-        } else {
-            std::cout << "El símbolo 'x' no existe en el entorno.\n";
-        }
-
-        // Buscar símbolos en el entorno
-        Variant result;
-        if (env.lookup("x", result)) {
-            std::cout << "Símbolo 'x' encontrado. Valor: " << result.getIntValue() << std::endl;
-        } else {
-            std::cout << "El símbolo 'x' no existe en el entorno.\n";
-        }
-
-        // Eliminar un símbolo
-        env.remove("x");
-        std::cout << "Símbolo 'x' eliminado con éxito.\n";
-
-        // Verificar nuevamente si el símbolo existe
-        if (env.exists("x")) {
-            std::cout << "El símbolo 'x' existe en el entorno.\n";
-        } else {
-            std::cout << "El símbolo 'x' no existe en el entorno.\n";
-        }
-
-        env.printEnvironment();
-
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
 
     return 0;
 
