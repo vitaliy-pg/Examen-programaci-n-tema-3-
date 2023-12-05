@@ -1,70 +1,43 @@
-#include <map>
+#include <map>          //para el uso de mapas
 #include <string>
 #include <stdexcept>    //para el manejo de excepciones
 #include <iostream>
 #include <variant>
 class Variant {
 
-public:
-    enum class Type {
-        Integer,
-        Float,
-        String
+    class Variant {
+    public:
+        using ValueType = std::variant<int, float, std::string>;
+
+    private:
+        ValueType value;
+
+    public:
+        Variant() : value(0) {}
+        Variant(int val) : value(val) {}
+        Variant(float val) : value(val) {}
+        Variant(const std::string& val) : value(val) {}
+
+        ValueType getValue() const {
+            return value;
+        }
+
+        std::string toString() const {
+            try {
+                if (std::holds_alternative<int>(value)) {
+                    return std::to_string(std::get<int>(value));
+                } else if (std::holds_alternative<float>(value)) {
+                    return std::to_string(std::get<float>(value));
+                } else if (std::holds_alternative<std::string>(value)) {
+                    return std::get<std::string>(value);
+                } else {
+                    return "Tipo de dato desconocido";
+                }
+            } catch (const std::bad_variant_access&) {
+                return "Error al acceder al valor del Variant";
+            }
+        }
     };
-
-};
-private:
-    Type dataType;
-
-    union {
-        int intValue;
-        float floatValue;
-        std::string stringValue;
-    };
-public:
-    Variant() : dataType(Type::Integer), intValue(0) {}
-    Variant(int value) : dataType(Type::Integer), intValue(value) {}
-    Variant(float value) : dataType(Type::Float), floatValue(value) {}
-    Variant(const std::string& value) : dataType(Type::String), stringValue(value) {}
-
-    Type getType() const {
-        return dataType;
-    }
-    int getIntValue() const {
-        if (dataType == Type::Integer) {
-            return intValue;
-        } else {
-            throw std::runtime_error("El Variant no contiene un valor entero.");
-        }
-    }
-    float getFloatValue() const {
-        if (dataType == Type::Float) {
-            return floatValue;
-        } else {
-            throw std::runtime_error("El Variant no contiene un valor de punto flotante.");
-        }
-    }
-    const std::string& getStringValue() const {
-        if (dataType == Type::String) {
-            return stringValue;
-        } else {
-            throw std::runtime_error("El Variant no contiene un valor de cadena.");
-        }
-    }
-
-    std::string toString() const {
-        switch (dataType) {
-            case Type::Integer:
-                return std::to_string(intValue);
-            case Type::Float:
-                return std::to_string(floatValue);
-            case Type::String:
-                return stringValue;
-            default:
-                return "Tipo de dato desconocido";
-        }
-    }
-};
 
 
      Class Environment
