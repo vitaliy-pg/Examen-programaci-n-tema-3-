@@ -107,6 +107,9 @@ public:
             std::cout << entry.first << ": " << entry.second.toString() << std::endl;
         }
     }
+    size_t size() const {
+        return symbolTable.size();
+
 };
 
 int main(){
