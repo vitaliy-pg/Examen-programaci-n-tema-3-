@@ -80,8 +80,12 @@ int main(){
         } else {
             std::cout << "El símbolo 'y' no existe en el entorno.\n";
         }
+    } catch (const std::exception& e) {
+        std::cerr << "Error al buscar símbolo: " << e.what() << std::endl;
+    }
 
-return 0;
+
+    return 0;
 
 
 }
