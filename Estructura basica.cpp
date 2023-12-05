@@ -27,6 +27,13 @@ public:
     Type getType() const {
         return dataType;
     }
+    int getIntValue() const {
+        if (dataType == Type::Integer) {
+            return intValue;
+        } else {
+            throw std::runtime_error("El Variant no contiene un valor entero.");
+        }
+    }
 
 
     Class Environment
