@@ -38,19 +38,15 @@ public:
 };
 
 
-     Class Environment
-        // Puedes realizar inicializaciones adicionales aquí si es necesario
-{
-    private :
-        std::map<std::string, Variant> symbolTable;
-    public :
+class Environment {
+private:
+    std::map<std::string, Variant> symbolTable;
+
+public:
     Environment() {}
 
     void insert(const std::string& name, const Variant& value) {
-        auto result = symbolTable.insert({name, value});
-        if (!result.second) {
-            throw std::runtime_error("El símbolo '" + name + "' ya existe en el entorno.");
-        }
+        symbolTable[name] = value;
     }
 
     bool lookup(const std::string& name, Variant& result) const {
@@ -81,14 +77,16 @@ public:
             std::cout << entry.first << ": " << entry.second.toString() << std::endl;
         }
     }
+
     size_t size() const {
         return symbolTable.size();
     }
+
     void clear() {
         symbolTable.clear();
     }
-
 };
+
 
 int main(){
     try {
@@ -105,7 +103,7 @@ int main(){
         if (env.exists("player_health")) {
             Variant health;
             env.lookup("player_health", health);
-            std::cout << "La salud del jugador es: " << health.getIntValue() << "\n";
+            std::cout << "La salud del jugador es: " << health.getInValue() << "\n";
         } else {
             std::cout << "El símbolo 'player_health' no existe en el entorno.\n";
         }
