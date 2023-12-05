@@ -111,20 +111,21 @@ public:
 
 int main(){
     try {
-    Environment env;
-
+        Environment env;
 
         // Insertar símbolos en el entorno
         env.insert("x", Variant(10));
         std::cout << "Símbolo 'x' insertado con éxito.\n";
-        env.insert("x", Variant(20));
-        std::cout << "Símbolo 'x' insertado con éxito.\n";  // Este mensaje no se imprimirá debido a la excepción
 
-     catch (const std::exception& e) {
-        std::cerr << "Error al insertar símbolo: " << e.what() << std::endl;
-    }
+        env.insert("y", Variant(20.5));
+        std::cout << "Símbolo 'y' insertado con éxito.\n";
 
-
+        // Verificar si un símbolo existe
+        if (env.exists("x")) {
+            std::cout << "El símbolo 'x' existe en el entorno.\n";
+        } else {
+            std::cout << "El símbolo 'x' no existe en el entorno.\n";
+        }
 
         // Buscar símbolos en el entorno
         Variant result;
@@ -133,15 +134,23 @@ int main(){
         } else {
             std::cout << "El símbolo 'x' no existe en el entorno.\n";
         }
-        if (env.lookup("y", result)) {
-            std::cout << "Símbolo 'y' encontrado. Valor: " << result.getIntValue() << std::endl;
-        } else {
-            std::cout << "El símbolo 'y' no existe en el entorno.\n";
-        }
-    } catch (const std::exception& e) {
-        std::cerr << "Error al buscar símbolo: " << e.what() << std::endl;
-    }
 
+        // Eliminar un símbolo
+        env.remove("x");
+        std::cout << "Símbolo 'x' eliminado con éxito.\n";
+
+        // Verificar nuevamente si el símbolo existe
+        if (env.exists("x")) {
+            std::cout << "El símbolo 'x' existe en el entorno.\n";
+        } else {
+            std::cout << "El símbolo 'x' no existe en el entorno.\n";
+        }
+
+        env.printEnvironment();
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 
     return 0;
 
