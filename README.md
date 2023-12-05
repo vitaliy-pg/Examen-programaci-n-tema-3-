@@ -33,7 +33,7 @@ Ejercicio 4: Introduzco mecanismos de manejo de excepciones
 
 Ejercicio 5: Explicar cómo la clase Environment trabaja en conjunto con Variant
 
-Ejercicio 6: Proporciono ejemplos como un buen diseñador (mentira la de trabajar no me la se)
+Ejercicio 6: Diseño y añado al menos dos funciones adicionales
 
 Ejercicio 7:
 
