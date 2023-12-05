@@ -29,7 +29,7 @@ Ejercicio 2: Implemento y prueba el método insert
 
 Ejercicio 3: Implemento y prueba el método lookup
 
-Ejercicio 4:
+Ejercicio 4: Introduzco mecanismos de manejo de excepciones 
 
 Ejercicio 5:
 
