@@ -133,10 +133,14 @@ int main(){
 
         std::cout << "\nEstado final del entorno:\n";
         env.printEnvironment();
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 
 
 
-        return 0;
+
+    return 0;
 
 
 }
