@@ -11,5 +11,7 @@ public :
 
 }
 
-
+    void setVariable(const std::string& name, const Variant& value) {
+        symbolTable[name] = value;
+    }
 
