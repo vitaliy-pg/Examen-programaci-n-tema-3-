@@ -13,4 +13,8 @@ Respuesta correcta: B
 
 Respuesta correcta: A
 
+-¿Qué función cumple el método to_json_string() en la clase Variant?
+
+Respuesta correcta: B
+
 
