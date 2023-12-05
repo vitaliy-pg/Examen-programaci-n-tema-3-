@@ -23,3 +23,5 @@ Respuesta correcta: C
 
 #PARTE 2: Pregunta de desarrollo de código:
 
+Ejercicio 1: Hago una estructura basica para poder crear una tabla de simbolos, de posible uso en video juegos 
+
