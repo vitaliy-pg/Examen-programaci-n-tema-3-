@@ -17,4 +17,8 @@ Respuesta correcta: A
 
 Respuesta correcta: B
 
+-¿Qué función cumple el método from_json_string() en la clase Variant?
+
+Respuesta correcta: C
+
 
