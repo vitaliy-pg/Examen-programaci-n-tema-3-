@@ -35,7 +35,7 @@ Ejercicio 5: Explicar cómo la clase Environment trabaja en conjunto con Variant
 
 Ejercicio 6: Diseño y añado al menos dos funciones adicionales
 
-Ejercicio 7:
+Ejercicio 7: Añado ejemplos como buen diseñador (mentira no me se la de trabajar)
 
 Ejercicio 8:
 
