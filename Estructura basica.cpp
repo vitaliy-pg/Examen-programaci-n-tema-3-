@@ -6,7 +6,10 @@ Class Environment
 {
     private :
         std::map<std::string, Variant> symbolTable;
+public :
+    Environment() {
 
+}
 
 
 
