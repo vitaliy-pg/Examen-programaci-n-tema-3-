@@ -1,6 +1,9 @@
 #include <map>
 #include <string>
-#include "Variant.h"
+#include <iostream>
+class Variant {
+    // Implementación de la clase Variant
+};
 
 Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
