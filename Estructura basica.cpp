@@ -22,3 +22,4 @@ public :
             return defaultValue;
         }
     }
+    void executeScript(const std::string& script) {
