@@ -4,11 +4,10 @@
 #include <iostream>
 #include <variant>
 class Variant {
+
 public:
-    enum class Type {
-        Integer,
-        Float,
-        String
+    using Value = std::variant<int, float, std::string>;
+
 
 };
 private:
