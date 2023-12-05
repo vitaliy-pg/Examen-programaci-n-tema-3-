@@ -113,6 +113,9 @@ int main(){
     try {
         Environment env;
 
+        env.insert("player_health", Variant(100));
+        env.insert("player_position", Variant("0,0"));
+
 
 
     return 0;
