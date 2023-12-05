@@ -129,6 +129,8 @@ int main(){
             std::cout << "El símbolo 'player_health' no existe en el entorno.\n";
         }
 
+        env.remove("player_position");
+
 
     return 0;
 
