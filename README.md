@@ -25,7 +25,7 @@ Respuesta correcta: C
 
 Ejercicio 1: Hago una estructura basica para poder crear una tabla de simbolos, de posible uso en video juegos 
 
-Ejercicio 2:
+Ejercicio 2: Implemento y prueba el método insert
 
 Ejercicio 3:
 
