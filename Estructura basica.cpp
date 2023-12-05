@@ -109,6 +109,10 @@ public:
     }
     size_t size() const {
         return symbolTable.size();
+    }
+    void clear() {
+        symbolTable.clear();
+    }
 
 };
 
