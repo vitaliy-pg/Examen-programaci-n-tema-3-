@@ -3,6 +3,11 @@
 #include <stdexcept>    //para el manejo de excepciones
 #include <iostream>
 class Variant {
+public:
+    enum class Type {
+        Integer,
+        Float,
+        String
 
 };
 
