@@ -16,3 +16,9 @@ public :
     }
     Variant getVariable(const std::string& name, const Variant& defaultValue = Variant()) const {
         auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            return it->second;
+        } else {
+            return defaultValue;
+        }
+    }
