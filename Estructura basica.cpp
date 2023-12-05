@@ -6,8 +6,11 @@
 class Variant {
 
 public:
-    using Value = std::variant<int, float, std::string>;
-
+    enum class Type {
+        Integer,
+        Float,
+        String
+    };
 
 };
 private:
