@@ -4,40 +4,38 @@
 #include <iostream>
 #include <variant>
 class Variant {
+public:
+    using ValueType = std::variant<int, float, std::string>;
 
-    class Variant {
-    public:
-        using ValueType = std::variant<int, float, std::string>;
+private:
+    ValueType value;
 
-    private:
-        ValueType value;
+public:
+    Variant() : value(0) {}
+    Variant(int val) : value(val) {}
+    Variant(float val) : value(val) {}
+    Variant(const std::string& val) : value(val) {}
 
-    public:
-        Variant() : value(0) {}
-        Variant(int val) : value(val) {}
-        Variant(float val) : value(val) {}
-        Variant(const std::string& val) : value(val) {}
+    ValueType getValue() const {
+        return value;
+    }
 
-        ValueType getValue() const {
-            return value;
-        }
-
-        std::string toString() const {
-            try {
-                if (std::holds_alternative<int>(value)) {
-                    return std::to_string(std::get<int>(value));
-                } else if (std::holds_alternative<float>(value)) {
-                    return std::to_string(std::get<float>(value));
-                } else if (std::holds_alternative<std::string>(value)) {
-                    return std::get<std::string>(value);
-                } else {
-                    return "Tipo de dato desconocido";
-                }
-            } catch (const std::bad_variant_access&) {
-                return "Error al acceder al valor del Variant";
+    std::string toString() const {
+        try {
+            if (std::holds_alternative<int>(value)) {
+                return std::to_string(std::get<int>(value));
+            } else if (std::holds_alternative<float>(value)) {
+                return std::to_string(std::get<float>(value));
+            } else if (std::holds_alternative<std::string>(value)) {
+                return std::get<std::string>(value);
+            } else {
+                return "Tipo de dato desconocido";
             }
+        } catch (const std::bad_variant_access&) {
+            return "Error al acceder al valor del Variant";
         }
-    };
+    }
+};
 
 
      Class Environment
