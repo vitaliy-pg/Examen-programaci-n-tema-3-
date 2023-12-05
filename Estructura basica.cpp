@@ -59,10 +59,11 @@ int main(){
     } else {
         std::cout << "El símbolo 'x' ya existe en el entorno.\n";
     }
-    if (env.insert("x", Variant(20))) {
-        std::cout << "Símbolo 'x' insertado con éxito.\n";
+    Variant result;
+    if (env.lookup("x", result)) {
+        std::cout << "Símbolo 'x' encontrado. Valor: " << result.getIntValue() << std::endl;
     } else {
-        std::cout << "El símbolo 'x' ya existe en el entorno.\n";
+        std::cout << "El símbolo 'x' no existe en el entorno.\n";
     }
 
 
