@@ -27,7 +27,7 @@ Ejercicio 1: Hago una estructura basica para poder crear una tabla de simbolos, 
 
 Ejercicio 2: Implemento y prueba el método insert
 
-Ejercicio 3:
+Ejercicio 3: Implemento y prueba el método lookup
 
 Ejercicio 4:
 
