@@ -25,3 +25,19 @@ Respuesta correcta: C
 
 Ejercicio 1: Hago una estructura basica para poder crear una tabla de simbolos, de posible uso en video juegos 
 
+Ejercicio 2:
+
+Ejercicio 3:
+
+Ejercicio 4:
+
+Ejercicio 5:
+
+Ejercicio 6:
+
+Ejercicio 7:
+
+Ejercicio 8:
+
+
+
