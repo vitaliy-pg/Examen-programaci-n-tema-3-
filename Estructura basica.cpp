@@ -41,6 +41,13 @@ public:
             throw std::runtime_error("El Variant no contiene un valor de punto flotante.");
         }
     }
+    const std::string& getStringValue() const {
+        if (dataType == Type::String) {
+            return stringValue;
+        } else {
+            throw std::runtime_error("El Variant no contiene un valor de cadena.");
+        }
+    }
 
 
     Class Environment
