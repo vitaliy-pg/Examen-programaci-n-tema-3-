@@ -34,6 +34,13 @@ public:
             throw std::runtime_error("El Variant no contiene un valor entero.");
         }
     }
+    float getFloatValue() const {
+        if (dataType == Type::Float) {
+            return floatValue;
+        } else {
+            throw std::runtime_error("El Variant no contiene un valor de punto flotante.");
+        }
+    }
 
 
     Class Environment
