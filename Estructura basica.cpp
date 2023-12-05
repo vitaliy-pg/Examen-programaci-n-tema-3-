@@ -10,6 +10,13 @@ public:
         String
 
 };
+private:
+    Type dataType;
+
+    union {
+        int intValue;
+        float floatValue;
+        std::string stringValue;
 
 Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
