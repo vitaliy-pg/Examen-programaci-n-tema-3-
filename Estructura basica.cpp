@@ -49,6 +49,11 @@ int main(){
     } else {
         std::cout << "El símbolo 'x' ya existe en el entorno.\n";
     }
+    if (env.insert("x", Variant(20))) {
+        std::cout << "Símbolo 'x' insertado con éxito.\n";
+    } else {
+        std::cout << "El símbolo 'x' ya existe en el entorno.\n";
+    }
 
 
 
