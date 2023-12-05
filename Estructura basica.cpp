@@ -103,7 +103,7 @@ int main(){
         if (env.exists("player_health")) {
             Variant health;
             env.lookup("player_health", health);
-            std::cout << "La salud del jugador es: " << health.getInValue() << "\n";
+            std::cout << "La salud del jugador es: " << std::get<int>(health.getValue()) << "\n";
         } else {
             std::cout << "El símbolo 'player_health' no existe en el entorno.\n";
         }
@@ -112,9 +112,14 @@ int main(){
 
         std::cout << "\nEstado final del entorno:\n";
         env.printEnvironment();
+        std::cout << "Número de símbolos en el entorno: " << env.size() << "\n";
+
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
+
+    return 0;
+}
 
 
 
