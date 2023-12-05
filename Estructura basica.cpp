@@ -67,18 +67,14 @@ int main(){
     }
 
 
-    Variant result;
-    if (env.lookup("x", result)) {
-        std::cout << "Símbolo 'x' encontrado. Valor: " << result.getIntValue() << std::endl;
-    } else {
-        std::cout << "El símbolo 'x' no existe en el entorno.\n";
-    }
-    if (env.lookup("y", result)) {
-        std::cout << "Símbolo 'y' encontrado. Valor: " << result.getIntValue() << std::endl;
-    } else {
-        std::cout << "El símbolo 'y' no existe en el entorno.\n";
-    }
-
+    try {
+        // Buscar símbolos en el entorno
+        Variant result;
+        if (env.lookup("x", result)) {
+            std::cout << "Símbolo 'x' encontrado. Valor: " << result.getIntValue() << std::endl;
+        } else {
+            std::cout << "El símbolo 'x' no existe en el entorno.\n";
+        }
 
 
 return 0;
