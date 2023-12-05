@@ -3,6 +3,7 @@
 #include "Variant.h"#include <map>
 
 Class Environment
+        // Puedes realizar inicializaciones adicionales aquí si es necesario
 {
     private :
         std::map<std::string, Variant> symbolTable;
@@ -23,3 +24,7 @@ public :
         }
     }
     void executeScript(const std::string& script) {
+        // Implementación de la ejecución del script, por ejemplo, interpretación de comandos
+}
+
+}
