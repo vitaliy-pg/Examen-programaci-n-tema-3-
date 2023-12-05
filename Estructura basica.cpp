@@ -42,7 +42,13 @@ Class Environment
 };
 
 int main(){
+    Environment env;
 
+    if (env.insert("x", Variant(10))) {
+        std::cout << "Símbolo 'x' insertado con éxito.\n";
+    } else {
+        std::cout << "El símbolo 'x' ya existe en el entorno.\n";
+    }
 
 
 
