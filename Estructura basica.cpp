@@ -33,7 +33,8 @@ Class Environment
         auto result = symbolTable.insert({name, value});
         return result.second;
     }
-
+    bool lookup(const std::string& name, Variant& result) const {
+        auto it = symbolTable.find(name);
 
 
 
