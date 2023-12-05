@@ -49,6 +49,20 @@ public:
         }
     }
 
+    std::string toString() const {
+        switch (dataType) {
+            case Type::Integer:
+                return std::to_string(intValue);
+            case Type::Float:
+                return std::to_string(floatValue);
+            case Type::String:
+                return stringValue;
+            default:
+                return "Tipo de dato desconocido";
+        }
+    }
+};
+
 
     Class Environment
         // Puedes realizar inicializaciones adicionales aquí si es necesario
